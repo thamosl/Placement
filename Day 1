@@ -1,0 +1,49 @@
+Coding Task 1 : https://unstop.com/code/practice/250138
+
+def calculate_measurement(arr):
+    MOD = 10**9 + 7
+    original = list(enumerate(arr)) 
+    sorted_arr = sorted(arr)
+
+    last_occurrence = {}
+    for i, val in enumerate(sorted_arr):
+        last_occurrence[val] = i
+
+    total = 0
+    for idx, val in original:
+        sanity = idx + last_occurrence[val]
+        total = (total + sanity) % MOD
+    return total
+
+
+if __name__ == "__main__":
+    n = int(input())
+    arr = list(map(int, input().split()))
+    if len(arr) != n:
+        print("Invalid input length")
+    else:
+        result = calculate_measurement(arr)
+        print(result)
+def calculate_measurement(arr):
+    MOD = 10**9 + 7
+    original = list(enumerate(arr)) 
+    sorted_arr = sorted(arr)
+
+    last_occurrence = {}
+    for i, val in enumerate(sorted_arr):
+        last_occurrence[val] = i
+
+    total = 0
+    for idx, val in original:
+        sanity = idx + last_occurrence[val]
+        total = (total + sanity) % MOD
+    return total
+
+if __name__ == "__main__":
+    n = int(input())
+    arr = list(map(int, input().split()))
+    if len(arr) != n:
+        print("Invalid input length")
+    else:
+        result = calculate_measurement(arr)
+        print(result)
